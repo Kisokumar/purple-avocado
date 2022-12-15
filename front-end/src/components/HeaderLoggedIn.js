@@ -10,34 +10,31 @@ export default function Header() {
           <li>
             {/* Need to change link */}
             <a
-              className="button"
               href="https://www.google.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Login
+              Recent Transactions
             </a>
           </li>
           <li>
             {/* Need to change link */}
             <a
-              className="button"
               href="https://www.google.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Signup
+              Overview
             </a>
           </li>
           <li>
             {/* Need to change link */}
             <a
-              className="button"
               href="https://www.google.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Contact
+              Logout
             </a>
           </li>
         </ul>
