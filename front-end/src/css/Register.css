@@ -1,0 +1,36 @@
+.register{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    margin-top:160px;
+  }
+
+  .input{
+    border-radius: 40px;
+    height: 30px;
+    padding-left:15px;
+    border-color: transparent;
+    min-width: 300px;
+    max-width: 400px;
+    margin: 10px 0px 10px 0px;
+  }
+
+  .signupform {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .signup-container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .submit{
+    margin-top:10px;
+  }
+
+  .signup{
+    margin-bottom:0px;
+  }
