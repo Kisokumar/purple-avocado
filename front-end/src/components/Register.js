@@ -6,7 +6,7 @@ function Register() {
       <form className="signupform">
         <h1 className="signup">Sign Up</h1>
         <label for="fname">Full name: </label>
-        <input type="text" placeholder="Full name" className="field name input input"></input>
+        <input type="text" placeholder="Full name" className="input"></input>
         <label for="fname">Username: </label>
         <input type="text"
           // onChange={(e) => setUsernameState(userref.current.value)}
@@ -15,11 +15,11 @@ function Register() {
           className="field username input"
         />
         <label for="fname">Email:  </label>
-        <input type="text" placeholder="Email" className="field emailinput input"></input>
+        <input type="text" placeholder="Email" className="input"></input>
         <label for="fname">Password: </label>
-        <input type="text" placeholder="Password" className="field passwordinput input"></input>
+        <input type="text" placeholder="Password" className="input"></input>
         <label for="fname">Re-enter Password: </label>
-        <input type="text" placeholder="Password" className="field passwordinput input"></input>
+        <input type="text" placeholder="Password" className="input"></input>
         <button
           type="button"
           // onClick={handleSubmit}
