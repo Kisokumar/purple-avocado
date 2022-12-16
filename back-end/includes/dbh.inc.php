@@ -6,7 +6,7 @@ $password = "";
 $dbName = "user_db"
 
 // Create connection
-$conn = mysqli_connect($servername, $userName, $password, $username, $dbName);
+$conn = mysqli_connect($servername, $dbUserName, $password, $username, $dbName);
 
 // Check connection
 if (!$conn) {
@@ -15,8 +15,8 @@ if (!$conn) {
 
 // Create user database
 mysqli_query($conn, "CREATE DATABASE users");
-mysqli_query($conn, 'ALTER TABLE users ADD COLUMN user_name VARCHAR(255)');
-mysqli_query($conn, 'ALTER TABLE users ADD COLUMN user_email VARCHAR(255)');
-mysqli_query($conn, 'ALTER TABLE users ADD COLUMN user_password VARCHAR(255)');
+mysqli_query($conn, 'ALTER TABLE users ADD COLUMN name VARCHAR(255)');
+mysqli_query($conn, 'ALTER TABLE users ADD COLUMN email VARCHAR(255)');
+mysqli_query($conn, 'ALTER TABLE users ADD COLUMN password VARCHAR(255)');
 
 // mysqli_close($conn);
