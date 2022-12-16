@@ -1,32 +1,70 @@
+import {useState, setState} from 'react'
+
 function Register() {
+  const [name, setName] = useState(null)
+  const [username, setUsername] = useState(null)
+  const [email, setEmail] = useState(null)
+  const [password, setPassword] = useState(null)
+  const [confirmPassword, setConfirmPassword] = useState(null)
+
+  const handleInputChange = (e) => {
+    const {id , value} = e.target;
+    if(id === "name"){
+        setName(value);
+    }
+    if(id === "username"){
+      setUsername(value);
+  }
+    if(id === "email"){
+        setEmail(value);
+    }
+    if(id === "password"){
+        setPassword(value);
+    }
+    if(id === "confirmPassword"){
+        setConfirmPassword(value);
+    }
+
+}
+const handleSubmit  = (event) => {
+  event.preventDefault();
+  console.log(name,username,email,password,confirmPassword);
+}
+  
   return (
     <section className="register">
       <form className="signupform">
         <h1 className="signup">Sign Up</h1>
         <div className="signup-container">
-          {/* <label for="fname">Full name: </label> */}
-          <input type="text" placeholder="Full name" className="input"></input>
-          {/* <label for="fname">Username: </label> */}
+          <input 
+          type="text"
+          value={name}
+          placeholder='Full Name' 
+          className="input"
+          id='name'
+          onChange = {(e) => handleInputChange(e)}>
+          </input>
           <input
             type="text"
-            // onChange={(e) => setUsernameState(userref.current.value)}
-            // onChange={(e) => handleUsername()}
+            value={username}
+            id='username'
             placeholder="Username"
             className="field username input"
+            onChange = {(e) => handleInputChange(e)}
           />
-          {/* <label for="fname">Email: </label> */}
-          <input type="text" placeholder="Email" className="input"></input>
-          {/* <label for="fname">Password: </label> */}
-          <input type="text" placeholder="Password" className="input"></input>
-          {/* <label for="fname">Re-enter Password: </label> */}
+          <input type="text" value={email} id='email' placeholder="Email" className="input" onChange = {(e) => handleInputChange(e)}></input>
+          <input type="text" value={password} id='password' placeholder="Password" className="input" onChange = {(e) => handleInputChange(e)}></input>
           <input
             type="text"
+            value={confirmPassword}
             placeholder="Re-enter password"
             className="input"
+            id='confirmPassword'
+            onChange = {(e) => handleInputChange(e)}
           ></input>
           <button
-            type="button"
-            // onClick={handleSubmit}
+            type="submit"
+            onClick={handleSubmit}
             className="submit button"
           >
             Submit
