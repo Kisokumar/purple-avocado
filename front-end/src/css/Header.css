@@ -9,8 +9,13 @@
     box-shadow: 15px 25px 70px -25px #111;
   }
 
+  .link{
+  text-decoration: none;
+  }
+
 .title-box{
     display: flex;
+  color: white;
     align-items: center;
     border-radius: 30px;
     padding-right:20px;
