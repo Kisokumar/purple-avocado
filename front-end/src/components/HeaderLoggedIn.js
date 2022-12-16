@@ -4,7 +4,7 @@ export default function Header() {
       <nav className="nav-bar">
         <div className="title-box">
           <img alt="money bag logo" src="./money-bag.png" className="logo" />
-          <p>Purple Avacodo</p>
+          <p>Purple Avocado</p>
         </div>
         <ul className="nav-items">
           <li>

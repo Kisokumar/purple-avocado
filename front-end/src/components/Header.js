@@ -2,42 +2,26 @@ export default function Header() {
   return (
     <header>
       <nav className="nav-bar">
-        <div className="title-box">
-          <img alt="money bag logo" src="./money-bag.png" className="logo" />
-          <p>Purple Avacodo</p>
-        </div>
+        <a className="link" href="/">
+          <div className="title-box">
+            <img alt="Logo" src="/logo.png" className="logo" />
+            <p>Purple Avocado</p>
+          </div>
+        </a>
         <ul className="nav-items">
           <li>
-            {/* Need to change link */}
-            <a
-              className="button"
-              href="https://www.google.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a className="button" href="/login">
               Login
             </a>
           </li>
           <li>
-            {/* Need to change link */}
-            <a
-              className="button"
-              href="https://www.google.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a className="button" href="/signup">
               Signup
             </a>
           </li>
           <li>
-            {/* Need to change link */}
-            <a
-              className="button"
-              href="https://www.google.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Contact
+            <a className="button" href="/about">
+              About
             </a>
           </li>
         </ul>
