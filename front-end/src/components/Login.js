@@ -5,17 +5,21 @@ function Login() {
         <h1 className="signup">Log In</h1>
         <div className="signup-container">
           <input
-            type="text"
+            type="email"
             // onChange={(e) => setUsernameState(userref.current.value)}
             // onChange={(e) => handleUsername()}
-            placeholder="Username"
+            placeholder="Email"
             className="field username input"
           />
-          <input type="text" placeholder="Password" className="input"></input>
+          <input
+            type="password"
+            placeholder="Password"
+            className="input"
+          ></input>
           <button
             type="button"
             // onClick={handleSubmit}
-            className="submit button"
+            className="submit darkbutton"
           >
             Submit
           </button>
