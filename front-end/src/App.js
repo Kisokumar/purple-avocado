@@ -5,6 +5,7 @@ import DashboardPage from "./pages/DashboardPage";
 import NotFoundPage from "./pages/NotFoundPage";
 
 import { Route, Routes } from "react-router-dom";
+import BalanceHistoryPage from "./pages/BalanceHistoryPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/login" element={<LogInPage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/dashboard/:userid" element={<DashboardPage />} />
+      <Route path="/balance" element={<BalanceHistoryPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
