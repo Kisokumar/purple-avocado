@@ -13,3 +13,19 @@
     background-color: white;
     transition-duration: 0.1s;
   }
+
+  .darkbutton{
+    border: solid;
+    border-radius: 40px;
+    padding: 8px 20px 8px 20px;
+    border-color: transparent;
+    color:white;
+    background-color: black;
+    transition-duration: 0.4s;
+  }
+
+  .darkbutton:hover{
+    color: white;
+    background-color: purple;
+    transition-duration: 0.3s;
+  }

@@ -1,0 +1,50 @@
+.register{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 30px;
+  }
+
+  .input{
+    border-radius: 40px;
+    height: 30px;
+    padding-left:15px;
+    border-color: black;
+    min-width: 300px;
+    max-width: 400px;
+    margin: 10px 0px 10px 0px;
+    transition-duration: 0.4s;
+  }
+
+  .input:focus{
+    transform: scale(1.1);
+    transition-duration: 0.1s;
+    outline: none !important;
+    border:2px solid purple;
+    box-shadow: 0 0 10px #719ECE;
+}
+
+  .signupform {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .signup-container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .submit{
+    margin-top:10px;
+    background-color: rgb(29, 0, 29);
+  }
+
+  .signup{
+    margin-bottom:0px;
+  }

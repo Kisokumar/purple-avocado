@@ -1,6 +1,9 @@
 @import url("./css/Universal.css");
 @import url("./css/App.css");
+@import url("./css/Register.css");
 @import url("./css/Header.css");
+@import url("./css/AboutPage.css");
+@import url("./css/Dashboard.css");
 
 body {
   margin: 0;
