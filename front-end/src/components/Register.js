@@ -32,7 +32,7 @@ function Register() {
 
   return (
     <section className="register">
-      <form className="signupform">
+      <form className="signupform" method="post">
         <h1 className="signup">Sign Up</h1>
         <div className="signup-container">
           <input
@@ -41,12 +41,14 @@ function Register() {
             placeholder="Full Name"
             className="input"
             id="name"
+            name = "name"
             onChange={(e) => handleInputChange(e)}
           ></input>
           <input
             type="email"
             value={email}
             id="email"
+            name = "email"
             placeholder="Email"
             className="input"
             onChange={(e) => handleInputChange(e)}
@@ -55,6 +57,7 @@ function Register() {
             type="password"
             value={password}
             id="password"
+            name = "password"
             placeholder="Password"
             className="input"
             onChange={(e) => handleInputChange(e)}
@@ -65,6 +68,7 @@ function Register() {
             placeholder="Re-enter password"
             className="input"
             id="confirmPassword"
+            name = "confirmPassword"
             onChange={(e) => handleInputChange(e)}
           ></input>
           <button

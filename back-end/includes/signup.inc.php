@@ -7,7 +7,7 @@ if(isset($POST["submit"])){
     $name =         $_POST["name"];
     $email =        $_POST["email"];
     $password =     $_POST["password"];
-    $passwordrepeat=$_POST["passwordrepeat"];
+    $passwordrepeat=$_POST["confirmPassword"];
 }
 
 require_once "dbh.inc.php";
