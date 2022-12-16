@@ -64,7 +64,7 @@ const data = [
 
 export default function App() {
   return (
-    <div>
+    <div className="dashboard">
         <h3>Account Balance</h3>
     <AreaChart
         width={500}
