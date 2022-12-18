@@ -32,7 +32,7 @@ function Register() {
 
   return (
     <section className="register">
-      <form className="signupform" method="post">
+      <form className="signupform" action="../back-end/includes/signup.inc.php" method="post">
         <h1 className="signup">Sign Up</h1>
         <div className="signup-container">
           <input
