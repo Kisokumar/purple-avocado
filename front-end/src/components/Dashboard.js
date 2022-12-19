@@ -1,13 +1,14 @@
 import { useParams } from "react-router-dom";
 // import SavingsBreakdown from "./SavingsBreakdown";
 import BalanceHistory from "./BalanceHistory";
+import { useState } from "react";
 
 // This would be received from the backend once completed
 
 const mockData = {
   userid: "Scrooge",
   name: "Scrooge McDuck",
-  balance: "$315,360,102,090,135,047",
+  balance: "$5500",
   recentTransactions: {
     Groceries: -139,
     "Investing/Saving": -1200,
@@ -55,7 +56,7 @@ const mockData = {
     },
     {
       month: "Sep",
-      Balance: 3490,
+      Balance: 2490,
     },
     {
       month: "Oct",
@@ -63,11 +64,11 @@ const mockData = {
     },
     {
       month: "Nov",
-      Balance: 3490,
+      Balance: 5500,
     },
     {
       month: "Dec",
-      Balance: 3490,
+      Balance: 5500,
     },
   ],
 };
@@ -79,17 +80,65 @@ function Dashboard() {
   };
   const { username } = useParams();
 
+  const [transactionType, setTransactionType] = useState("");
+  const [amount, setAmount] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const transaction = { transactionType, amount };
+    // console.log(transaction);
+    // use this function to send 'transaction' object to backend
+  };
+
   return (
     <>
       <div className="dashboard-container">
         <div className="dashboard">
           <h1>Welcome back {userData(username).name}!</h1>
           <p>Balance: {userData(username).balance}</p>
-          <p>
-            Recent Transactions: {userData(username).recentTransactions.Bills}
-          </p>
-          {/* <SavingsBreakdown /> */}
           <BalanceHistory data={mockData.balanceHistory} />
+          {/* fix code below by looping over recentTransactions and returning each one in a p tag */}
+          {/* <p>
+            Recent Transactions: {userData(username).recentTransactions.Bills}
+          </p> */}
+          {/* <SavingsBreakdown /> */}
+        </div>
+
+        <div className="transaction">
+          <h1>Add Transaction</h1>
+          <div>
+            <form
+              onSubmit={handleSubmit}
+              id="transaction-form"
+              className="addtransaction"
+            >
+              <select
+                className="input dark dropdown"
+                onChange={(e) => setTransactionType(e.target.value)}
+                // defaultValue={"Choose Transaction"} //
+              >
+                <option value="" disabled selected>
+                  Choose Transaction
+                </option>
+                <option value="income">Income</option>
+                <option value="savings">Savings</option>
+                <option value="bills">Bills</option>
+                <option value="utilities">Utilities</option>
+                <option value="rent">Rent</option>
+                <option value="groceries">Groceries</option>
+              </select>
+              <input
+                className="input dark"
+                placeholder="Amount (example: 23.49)"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+                required
+              ></input>
+              <button className="submit darkbutton" type="submit">
+                Submit
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </>
