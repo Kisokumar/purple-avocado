@@ -5,8 +5,8 @@
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    background-color: white;
-    color: black;
+    background-color: var(--card--bg);
+    color: white;
     padding: 20px;
     border-radius: 30px;
   }
@@ -15,19 +15,20 @@
     border-radius: 40px;
     height: 30px;
     padding-left:15px;
-    border-color: black;
+    border-width: 2px;
     min-width: 300px;
     max-width: 400px;
     margin: 10px 0px 10px 0px;
     transition-duration: 0.4s;
+    border-color: transparent;
+    color:black;
+    background-color: white;
   }
 
   .input:focus{
-    transform: scale(1.1);
     transition-duration: 0.1s;
     outline: none !important;
-    border:2px solid purple;
-    box-shadow: 0 0 10px #719ECE;
+    box-shadow: 0 0 10px grey
 }
 
   .signupform {
@@ -42,7 +43,8 @@
 
   .submit{
     margin-top:10px;
-    background-color: rgb(29, 0, 29);
+    background-color: white;
+    color: black;
   }
 
   .signup{

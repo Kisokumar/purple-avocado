@@ -1,23 +1,23 @@
-import {useState, setState} from 'react'
+import { useState, setState } from "react";
 
 function Login() {
-
-  const [username, setUsername] = useState(null)
-  const [password, setPassword] = useState(null)
+  const [username, setUsername] = useState(null);
+  const [password, setPassword] = useState(null);
 
   const handleInputChange = (e) => {
-    const {id , value} = e.target;
-    if(id === "username"){
+    const { id, value } = e.target;
+    if (id === "username") {
       setUsername(value);
-  }
-    if(id === "password"){
-        setPassword(value);
-    }}
-
-    const handleSubmit  = (event) => {
-      event.preventDefault();
-      console.log(username,password);
     }
+    if (id === "password") {
+      setPassword(value);
+    }
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(username, password);
+  };
 
   return (
     <section className="register">
@@ -26,27 +26,25 @@ function Login() {
         <div className="signup-container">
           <input
             type="text"
-            id='username'
+            id="username"
             placeholder="Username"
             value={username}
             className="field username input"
-            onChange = {(e) => handleInputChange(e)}
-            >
-          </input>
-          <input 
-            type="text" 
-            placeholder="Password" 
-            className="input" 
-            onChange = {(e) => handleInputChange(e)}
-            >
-          </input>
+            onChange={(e) => handleInputChange(e)}
+          ></input>
+          <input
+            type="password"
+            placeholder="Password"
+            className="input"
+            onChange={(e) => handleInputChange(e)}
+          ></input>
           <button
             type="submit"
-            id='password'
+            id="password"
             value={password}
             onClick={handleSubmit}
             className="submit darkbutton"
-            >
+          >
             Submit
           </button>
         </div>

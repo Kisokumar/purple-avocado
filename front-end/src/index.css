@@ -5,6 +5,11 @@
 @import url("./css/AboutPage.css");
 @import url("./css/Dashboard.css");
 
+:root {
+  --card-highlight-bg: rgb(41, 41, 41);
+  --card--bg: black;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
