@@ -1,12 +1,9 @@
 import React from "react";
 import {
-  LineChart,
-  Line,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend, 
   AreaChart, 
   Area
 } from "recharts";
