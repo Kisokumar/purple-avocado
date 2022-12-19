@@ -4,8 +4,8 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  AreaChart, 
-  Area
+  AreaChart,
+  Area,
 } from "recharts";
 
 const data = [
@@ -56,31 +56,36 @@ const data = [
   {
     month: "Dec",
     Balance: 3490,
-  }
+  },
 ];
 
-export default function App() {
+export default function BalanceHistory(props) {
   return (
-    <div className="dashboard">
-        <h3>Account Balance</h3>
-    <AreaChart
+    <div>
+      <h3>Account Balance</h3>
+      <AreaChart
         width={500}
         height={200}
-        data={data}
+        data={props.data}
         syncId="anyId"
         margin={{
           top: 10,
           right: 30,
           left: 0,
-          bottom: 0
+          bottom: 0,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="month" />
         <YAxis />
         <Tooltip />
-        <Area type="monotone" dataKey="Balance" stroke="#82ca9d" fill="#82ca9d" />
+        <Area
+          type="monotone"
+          dataKey="Balance"
+          stroke="#82ca9d"
+          fill="#82ca9d"
+        />
       </AreaChart>
-      </div>
+    </div>
   );
 }
