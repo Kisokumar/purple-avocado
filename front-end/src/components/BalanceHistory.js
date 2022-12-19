@@ -61,7 +61,7 @@ const data = [
 
 export default function BalanceHistory(props) {
   return (
-    <div>
+    <div className="balance-component">
       <h3>Account Balance</h3>
       <AreaChart
         width={500}
