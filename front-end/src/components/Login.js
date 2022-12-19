@@ -45,7 +45,7 @@ function Login() {
             id='password'
             value={password}
             onClick={handleSubmit}
-            className="submit button"
+            className="submit darkbutton"
             >
             Submit
           </button>
