@@ -1,4 +1,5 @@
 import { useState, setState } from "react";
+import {useNavigate} from 'react-router-dom'
 
 function Login() {
   const [username, setUsername] = useState(null);
@@ -14,21 +15,22 @@ function Login() {
     }
   };
 
+  const navigate = useNavigate();
   const handleSubmit = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     const loginData = { username, password}
     fetch('', {
       method: 'POST',
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(loginData)
     })
+    navigate("/dashboard/" + username);
   };
 
   return (
     <section className="register">
-      <form className="signupform">
-        <h1 className="signup">Log In</h1>
-        <div className="signup-container">
+      <h1 className="signup">Log In</h1>
+      <form className="signupform signup-container">
           <input
             type="text"
             id="username"
@@ -36,12 +38,14 @@ function Login() {
             value={username}
             className="field username input"
             onChange={(e) => handleInputChange(e)}
+            required
           ></input>
           <input
             type="password"
             placeholder="Password"
             className="input"
             onChange={(e) => handleInputChange(e)}
+            required
           ></input>
           <button
             type="submit"
@@ -49,10 +53,10 @@ function Login() {
             value={password}
             onClick={handleSubmit}
             className="submit darkbutton"
+            action="/dashboard"
           >
             Submit
           </button>
-        </div>
       </form>
     </section>
   );
