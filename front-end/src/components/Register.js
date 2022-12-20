@@ -1,19 +1,15 @@
 import { useState, setState } from "react";
 
 function Register() {
-  const [name, setName] = useState(null);
-  const [username, setUsername] = useState(null);
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
-  const [confirmPassword, setConfirmPassword] = useState(null);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
     if (id === "name") {
       setName(value);
-    }
-    if (id === "username") {
-      setUsername(value);
     }
     if (id === "email") {
       setEmail(value);
@@ -27,12 +23,21 @@ function Register() {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(name, username, email, password, confirmPassword);
+    const signUpData = { name, email, password, confirmPassword}
+    fetch('', {
+      method: 'POST',
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(signUpData)
+    })
+    // console.log(name, email, password, confirmPassword);
+    // console.log(signUpData)
+
+    
   };
 
   return (
     <section className="register">
-      <form className="signupform">
+      <form className="signupform" onSubmit={handleSubmit}>
         <h1 className="signup">Sign Up</h1>
         <div className="signup-container">
           <input
@@ -69,7 +74,6 @@ function Register() {
           ></input>
           <button
             type="submit"
-            onClick={handleSubmit}
             className="submit button"
           >
             Submit
