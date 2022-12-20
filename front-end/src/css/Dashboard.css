@@ -1,16 +1,61 @@
+.dark{
+    background-color: var(--card-highlight-bg);
+    color: white;
+}
+
 .dashboard{
     display: flex;
     flex-direction: column;
-    padding: 20px;
     color: white;
-    margin: 0;
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
     background-color: black;
     width: max-content;
     padding: 50px 50px 50px 50px;
-    border-radius: 40px;
+    border-radius: 20px;
+}
+
+.dashboard > p, .dashboard>h1{
+    /* border-color: white; */
+    /* border: solid; */
+    border-radius:20px;
+    padding: 10px 30px 10px 30px;
+    background-color: var(--card-highlight-bg);
+}
+
+.balance-component{
+    border-radius:20px;
+    padding: 10px 30px 10px 30px;
+    background-color: var(--card-highlight-bg)
+}
+
+.dashboard-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.transaction{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: black;
+    width: max-content;
+    padding: 10px 40px 30px 40px;
+    border-radius: 20px;
+    margin:20px;
+    /* height: 80px; */
+}
+
+.addtransaction{
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown{
+    height: 36px;
 }
