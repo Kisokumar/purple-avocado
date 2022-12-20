@@ -18,3 +18,8 @@ else{
     header("location: ../front-end/src/pages/DashboardPage.js");
     exit();
 }
+
+if(!isset($SESSION['username'])){
+	echo "You are logged out. Please log in to access your account.";
+}else{
+	echo "Welcome, " . $username . "!";
