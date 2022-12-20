@@ -82,18 +82,17 @@ function Dashboard() {
 
   const [transactionType, setTransactionType] = useState("");
   const [amount, setAmount] = useState("");
+  const [date, setDate] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const transactionData = { transactionType, amount}
+    const transactionData = { transactionType, amount, date}
+    console.log(transactionData)
     fetch('', {
       method: 'POST',
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(transactionData)
     })
-    
-    // console.log(transaction);
-    // use this function to send 'transaction' object to backend
   };
 
   return (
@@ -139,6 +138,13 @@ function Dashboard() {
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
                 required
+              ></input>
+              <input 
+              onChange={(e) => setDate(e.target.value)}
+              type="date" 
+              id="transaction" 
+              name="transaction"
+              className="input dark"
               ></input>
               <button className="submit darkbutton" type="submit">
                 Submit
