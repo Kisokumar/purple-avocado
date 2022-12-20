@@ -85,7 +85,13 @@ function Dashboard() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const transaction = { transactionType, amount };
+    const transactionData = { transactionType, amount}
+    fetch('', {
+      method: 'POST',
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(transactionData)
+    })
+    
     // console.log(transaction);
     // use this function to send 'transaction' object to backend
   };

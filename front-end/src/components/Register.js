@@ -23,7 +23,12 @@ function Register() {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(name, email, password, confirmPassword);
+    const signUpData = { name, email, password, confirmPassword}
+    fetch('', {
+      method: 'POST',
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(signUpData)
+    })
   };
 
   return (
