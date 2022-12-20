@@ -85,7 +85,7 @@ function Dashboard() {
   const [date, setDate] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     const transactionData = { transactionType, amount, date}
     console.log(transactionData)
     fetch('', {
@@ -116,10 +116,12 @@ function Dashboard() {
               onSubmit={handleSubmit}
               id="transaction-form"
               className="addtransaction"
+              // action="/dashboard"
             >
               <select
                 className="input dark dropdown"
                 onChange={(e) => setTransactionType(e.target.value)}
+                required
                 // defaultValue={"Choose Transaction"} //
               >
                 <option value="" disabled selected>
@@ -145,6 +147,7 @@ function Dashboard() {
               id="transaction" 
               name="transaction"
               className="input dark"
+              required
               ></input>
               <button className="submit darkbutton" type="submit">
                 Submit

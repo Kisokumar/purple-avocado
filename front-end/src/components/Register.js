@@ -1,4 +1,5 @@
-import { useState, setState } from "react";
+import { useState, setState} from "react";
+import {useNavigate} from 'react-router-dom'
 
 function Register() {
   const [name, setName] = useState("");
@@ -21,6 +22,8 @@ function Register() {
       setConfirmPassword(value);
     }
   };
+
+  const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
     const signUpData = { name, email, password, confirmPassword}
@@ -29,6 +32,7 @@ function Register() {
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(signUpData)
     })
+    navigate('/dashboard/lucy');
   };
 
   return (
