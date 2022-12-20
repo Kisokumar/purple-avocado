@@ -16,7 +16,12 @@ function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(username, password);
+    const loginData = { username, password}
+    fetch('', {
+      method: 'POST',
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(loginData)
+    })
   };
 
   return (
