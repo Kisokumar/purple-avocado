@@ -27,9 +27,9 @@ if(uIDExists($conn, $username, $email) !== false){
     exit();
 }
 
-createUser($conn, $name, $email, $password);
-
 }else{
     header("location: ../front-end/src/pages/SignUpPage.js");
+
     exit();
 }
+createUser($conn, $name, $email, $password);
