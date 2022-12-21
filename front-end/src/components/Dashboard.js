@@ -131,12 +131,13 @@ function Dashboard() {
                 <option value="" disabled selected>
                   Category
                 </option>
-                <option value="income">Income</option>
-                <option value="savings">Savings</option>
-                <option value="bills">Bills</option>
-                <option value="utilities">Utilities</option>
+                <option value="shopping">Shopping</option>
+                <option value="eating out">Eating Out</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="transport">Transport</option>
                 <option value="rent">Rent</option>
                 <option value="groceries">Groceries</option>
+                <option value="other">Other</option>
               </select>
               <input
                 className="input dark"

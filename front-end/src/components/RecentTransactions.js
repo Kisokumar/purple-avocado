@@ -66,7 +66,7 @@ export default function RecentTransactions(props) {
       <AreaChart
         width={500}
         height={200}
-        data={props.data}
+        data={data}
         syncId="anyId"
         margin={{
           top: 10,
