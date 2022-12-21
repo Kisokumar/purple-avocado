@@ -30,9 +30,8 @@ if(uIDExists($conn, $username, $email) !== false){
     exit();
 }
 
-createUser($conn, $name, $email, $password);
-
-}else{
+else{
     header("location: ../signup.php");
     exit();
 }
+createUser($conn, $name, $email, $password);
