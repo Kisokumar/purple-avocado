@@ -7,25 +7,25 @@ use App\Entity\Transaction;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\Annotation\Route;
 
 
 class TransactionController extends AbstractController
 {
     private $transactionRepository;
-    private $userRepository;
-    private $
-
-    public function __construct(TransactionRepository $transactionRepository, UserRepository $userRepository)
+    private $requestStack;
+  
+    public function __construct(TransactionRepository $transactionRepository, RequestStack $requestStack)
     {
         $this->transactionRepository = $transactionRepository;
-        $this->userRepository = $userRepository;
+        $this->requestStack = $requestStack;
     }
 
     #[Route('/transactions', methods: ['GET'])]
     public function getTransactions($userId)
     {   
-        //$userId = session.userId
+        $userId = $this->requestStack->getSession()->get('userId');
         $transactions = $this->transactionRepository->getTransactions($userId);
         $response = new JsonResponse($transactions);
         if ($transactions) {
@@ -40,7 +40,7 @@ class TransactionController extends AbstractController
         
     }
 
-    // #[Route('/user/{userId}/')]
+    
 
     #[Route('/transaction', methods: ['POST'])]
     public function createTransaction(Request $request): JsonResponse
@@ -51,9 +51,6 @@ class TransactionController extends AbstractController
         $transaction->setDate($json['date']);
         $transaction->setPrice($json['price']);
         $transaction->setName($json['name']);
-
-        $transaction->setNewBalance($user->getBalance() - $json['price']);
-        
 
         $response = new JsonResponse($transaction);
         if ($transaction) {
@@ -73,19 +70,25 @@ class TransactionController extends AbstractController
     {   
         $transaction = $this->transactionRepository->find($transactionId);
         $this->transactionRepository->remove($transaction);
+
+        $response = new JsonResponse();
+        $response->setStatusCode(200);
+        return $response;
     }
 
-    #[Route('/users/{userId}/transaction/{transactionId}', methods: ['PUT'])]
-    public function editTransaction(Request $request, $userId, $transactionId)
+    #[Route('/transactions/{transactionId}', methods: ['PUT'])]
+    public function editTransaction(Request $request, $transactionId)
     {
         $oldTransaction = $this->transactionRepository->find($transactionId);
         $newTransaction = new Transaction();
         $json = json_decode($request->getContent());
-        $currBalance = $user->getBalance
 
         $newTransaction->setName($json['name'])->setDate($json['date'])->setPrice($json['price']);
-        $newTransaction->setNewBalance();
         $this->transactionRepository->replace($oldTransaction, $newTransaction);
+
+        $response = new JsonResponse();
+        $response->setStatusCode(200);
+        return $response;
     }
 
     
