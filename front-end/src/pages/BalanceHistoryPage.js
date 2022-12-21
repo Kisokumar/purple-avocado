@@ -1,11 +1,11 @@
-import Header from "../components/Header";
+import HeaderLoggedIn from "../components/HeaderLoggedIn";
 import Footer from "../components/Footer";
 import BalanceHistory from "../components/BalanceHistory";
 
 export default function BalanceHistoryPage() {
   return (
     <>
-      <Header />
+      <HeaderLoggedIn />
       <BalanceHistory/>
       <Footer />
     </>

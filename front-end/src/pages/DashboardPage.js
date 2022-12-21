@@ -1,11 +1,11 @@
-import Header from "../components/Header";
+import HeaderLoggedIn from "../components/HeaderLoggedIn";
 import Footer from "../components/Footer";
 import Dashboard from "../components/Dashboard";
 
 export default function DashboardPage() {
   return (
     <>
-      <Header />
+      <HeaderLoggedIn />
       <Dashboard />
       <Footer />
     </>
