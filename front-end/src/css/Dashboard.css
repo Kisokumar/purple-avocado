@@ -3,8 +3,7 @@
     color: white;
 }
 
-.dashboard{
-    display: block;
+.dashboard-welcome{
     color: white;
     background-color: black;
     width: max-content;
@@ -12,21 +11,18 @@
     border-radius: 20px;
 }
 
-.dashboard > p, .dashboard>h1{
+.dashboard-welcome>p, .dashboard-welcome>h1{
     padding: 10px 30px 10px 30px;
     background-color: var(--card-highlight-bg);
+    position: relative;
+    border-radius: 15px;
 }
 
-.recent-transactions-component{
-    border-radius:20px;
-    padding: 10px 30px 10px 30px;
-    background-color: var(--card-highlight-bg)
-}
 
 .dashboard-container{
-    display: block;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    margin: 0;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -34,8 +30,8 @@
     transform: translate(-50%, -50%);
 }
 
-.transaction{
-    display: block;
+.add-transaction{
+    display: flex;
     flex-direction: column;
     color: white;
     background-color: black;
@@ -53,4 +49,10 @@
 
 .dropdown{
     height: 36px;
+}
+
+.recent-and-add-transactions{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
 }

@@ -95,13 +95,16 @@ function Dashboard() {
     })
   };
 
+  var curr = new Date();
+  curr.setDate(curr.getDate());
+  var todaysDate = curr.toISOString().substring(0,10);
+
   return (
     <>
       <div className="dashboard-container">
-        <div className="dashboard">
-          <h1>Welcome back {userData(username).name}!</h1>
+        <div className="dashboard-welcome">
+          <h1>Welcome back, {userData(username).name}!</h1>
           <p>Balance: {userData(username).balance}</p>
-          <RecentTransactions data={mockData.recentTransactions} />
           {/* fix code below by looping over recentTransactions and returning each one in a p tag */}
           {/* <p>
             Recent Transactions: {userData(username).recentTransactions.Bills}
@@ -109,10 +112,11 @@ function Dashboard() {
           {/* <SavingsBreakdown /> */}
         </div>
 
-        <div className="transaction">
+        <section classname="recent-and-add-transactions">
+        <div className="add-transaction">
           <h1>Add Transaction</h1>
           <div>
-            <form
+          <form
               onSubmit={handleSubmit}
               id="transaction-form"
               className="addtransaction"
@@ -125,7 +129,7 @@ function Dashboard() {
                 // defaultValue={"Choose Transaction"} //
               >
                 <option value="" disabled selected>
-                  Choose Transaction
+                  Category
                 </option>
                 <option value="income">Income</option>
                 <option value="savings">Savings</option>
@@ -136,7 +140,7 @@ function Dashboard() {
               </select>
               <input
                 className="input dark"
-                placeholder="Amount (example: 23.49)"
+                placeholder="£..."
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
                 required
@@ -147,6 +151,7 @@ function Dashboard() {
               id="transaction"
               name="transaction"
               className="input dark"
+              defaultValue={todaysDate}
               required
               ></input>
               <button className="submit darkbutton" type="submit">
@@ -155,6 +160,8 @@ function Dashboard() {
             </form>
           </div>
         </div>
+        <RecentTransactions data={mockData.recentTransactions} />
+        </section>
       </div>
     </>
   );
