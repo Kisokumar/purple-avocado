@@ -1,12 +1,12 @@
 import HeaderLoggedIn from "../components/HeaderLoggedIn";
 import Footer from "../components/Footer";
-import BalanceHistory from "../components/BalanceHistory";
+import RecentTransactions from "../components/RecentTransactions";
 
-export default function BalanceHistoryPage() {
+export default function RecentTransactionsPage() {
   return (
     <>
       <HeaderLoggedIn />
-      <BalanceHistory/>
+      <RecentTransactions/>
       <Footer />
     </>
   );

@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 // import SavingsBreakdown from "./SavingsBreakdown";
-import BalanceHistory from "./BalanceHistory";
+import RecentTransactions from "./RecentTransactions";
 import { useState } from "react";
 
 // This would be received from the backend once completed
@@ -101,7 +101,7 @@ function Dashboard() {
         <div className="dashboard">
           <h1>Welcome back {userData(username).name}!</h1>
           <p>Balance: {userData(username).balance}</p>
-          <BalanceHistory data={mockData.balanceHistory} />
+          <RecentTransactions data={mockData.recentTransactions} />
           {/* fix code below by looping over recentTransactions and returning each one in a p tag */}
           {/* <p>
             Recent Transactions: {userData(username).recentTransactions.Bills}
@@ -141,10 +141,10 @@ function Dashboard() {
                 onChange={(e) => setAmount(e.target.value)}
                 required
               ></input>
-              <input 
+              <input
               onChange={(e) => setDate(e.target.value)}
-              type="date" 
-              id="transaction" 
+              type="date"
+              id="transaction"
               name="transaction"
               className="input dark"
               required

@@ -18,7 +18,7 @@ export default function HeaderLoggedIn() {
           <li>
             <a
               className = "button"
-              href="/balance"
+              href="/recenttransactions"
             >
               Recent Transactions
             </a>

@@ -4,8 +4,7 @@
 }
 
 .dashboard{
-    display: flex;
-    flex-direction: column;
+    display: block;
     color: white;
     background-color: black;
     width: max-content;
@@ -14,22 +13,18 @@
 }
 
 .dashboard > p, .dashboard>h1{
-    /* border-color: white; */
-    /* border: solid; */
-    border-radius:20px;
     padding: 10px 30px 10px 30px;
     background-color: var(--card-highlight-bg);
 }
 
-.balance-component{
+.recent-transactions-component{
     border-radius:20px;
     padding: 10px 30px 10px 30px;
     background-color: var(--card-highlight-bg)
 }
 
 .dashboard-container{
-    display: flex;
-    justify-content: center;
+    display: block;
     align-items: center;
     margin: 0;
     position: absolute;
@@ -40,7 +35,7 @@
 }
 
 .transaction{
-    display: flex;
+    display: block;
     flex-direction: column;
     color: white;
     background-color: black;
@@ -48,7 +43,7 @@
     padding: 10px 40px 30px 40px;
     border-radius: 20px;
     margin:20px;
-    /* height: 80px; */
+    height: inherit;
 }
 
 .addtransaction{
