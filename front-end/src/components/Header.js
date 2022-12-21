@@ -5,7 +5,7 @@ export default function Header() {
         <a className="link" href="/">
           <div className="title-box">
             <img alt="Logo" src="/logo.png" className="logo" />
-            <p>Purple Avocado</p>
+            <p id="title">Purple Avocado</p>
           </div>
         </a>
         <ul className="nav-items">
