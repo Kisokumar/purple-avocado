@@ -8,7 +8,9 @@ import NotFoundPage from "./pages/NotFoundPage";
 import { Route, Routes } from "react-router-dom";
 import RecentTransactionsPage from "./pages/RecentTransactionsPage";
 import SavingsBreakdownPage from "./pages/SavingsBreakdownPage";
-import IncomeCalculator from "./components/IncomeCalculator";
+import IncomeCalculatorPage from "./pages/IncomeCalculatorPage";
+import IncomeResultsPage from "./pages/IncomeResultsPage";
+
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
       <Route path="/dashboard/:username" element={<DashboardPage className="routes"/>} />
       <Route path="*" element={<NotFoundPage className="routes"/>} />
       <Route path="/incomecalculator" element={<IncomeCalculatorPage className="routes"/>}/>
+      <Route path="/incomeresults" element={<IncomeResultsPage className="routes"/>}/>
     </Routes>
   );
 }

@@ -130,9 +130,7 @@ function Dashboard() {
                 required
                 // defaultValue={"Choose Transaction"} //
               >
-                <option value="" disabled selected>
-                  Category
-                </option>
+                <option value="" disabled selected>Category</option>
                 <option value="shopping">Shopping</option>
                 <option value="eating out">Eating Out</option>
                 <option value="entertainment">Entertainment</option>
@@ -141,6 +139,7 @@ function Dashboard() {
                 <option value="groceries">Groceries</option>
                 <option value="other">Other</option>
               </select>
+
               <input
                 className="input dark"
                 placeholder="£..."
@@ -148,6 +147,8 @@ function Dashboard() {
                 onChange={(e) => setAmount(e.target.value)}
                 required
               ></input>
+
+
               <input
               onChange={(e) => setDate(e.target.value)}
               type="date"

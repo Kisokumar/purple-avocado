@@ -28,9 +28,9 @@ export default function HeaderLoggedIn() {
           <li>
             <a
               className = "button"
-              href="/savings"
+              href="/incomecalculator"
             >
-              Savings Breakdown
+              Income Calculator
             </a>
           </li>
           <li>
