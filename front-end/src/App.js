@@ -8,6 +8,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import { Route, Routes } from "react-router-dom";
 import RecentTransactionsPage from "./pages/RecentTransactionsPage";
 import SavingsBreakdownPage from "./pages/SavingsBreakdownPage";
+import IncomeCalculator from "./components/IncomeCalculator";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/savings" element={<SavingsBreakdownPage className="routes"/>} />
       <Route path="/dashboard/:username" element={<DashboardPage className="routes"/>} />
       <Route path="*" element={<NotFoundPage className="routes"/>} />
+      <Route path="/incomecalculator" element={<IncomeCalculatorPage className="routes"/>}/>
     </Routes>
   );
 }
