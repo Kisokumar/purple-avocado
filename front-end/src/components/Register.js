@@ -41,7 +41,9 @@ function Register() {
       .then(
         navigate(`/dashboard/:${name}`)
       )
-    }
+
+    console.log(userData)
+  }
 
 
   return (

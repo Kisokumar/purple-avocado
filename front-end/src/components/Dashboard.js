@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
-// import SavingsBreakdown from "./SavingsBreakdown";
 import RecentTransactions from "./RecentTransactions";
 import { useState } from "react";
+import axios from 'axios';
 
 // This would be received from the backend once completed
 
@@ -11,9 +11,9 @@ const mockData = {
   balance: "$5500",
   recentTransactions: {
     Groceries: -139,
-    "Investing/Saving": -1200,
-    Income: 30000,
-    Bills: -200,
+    Shopping: -1200,
+    Entertainment: 30000,
+    Travel: -200,
   },
   // balanceHistory: [
   //   ["1/12/2022", "$315,360,102,090,135,047"],
@@ -85,13 +85,15 @@ function Dashboard() {
   const [date, setDate] = useState("");
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     const transactionData = { transactionType, amount, date}
     console.log(transactionData)
-    fetch('', {
-      method: 'POST',
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(transactionData)
+    axios.post('http://...', userData)
+    .then(response => {
+      // handle the response here
+    })
+    .catch(error => {
+      // handle the error here
     })
   };
 

@@ -4,16 +4,18 @@ import axios from 'axios';
 
 
 function Login() {
-  const [username, setUsername] = useState(null);
-  const [password, setPassword] = useState(null);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
 
-  const handleUsernameInput = (e) => {
-    this.setUsername(e.target.value);
-  };
-  const handlePasswordInput = (e) => {
-    this.setPassword(e.target.value);
-  };
+  const handleInputChange = (e) => {
+    const {id , value} = e.target;
+    if(id === "username"){
+      setUsername(value);
+  }
+    if(id === "password"){
+        setPassword(value);
+    }}
 
   const navigate = useNavigate(); //allows a React component to programmatically navigate to a new location
 
@@ -32,6 +34,8 @@ function Login() {
     .catch(error => {
       // handle the error here
     })
+
+    console.log(userData)
   }
 
 
@@ -45,14 +49,15 @@ function Login() {
             placeholder="Username"
             value={username}
             className="field username input"
-            onChange={(e) => handleUsernameInput(e)}
+            onChange={(e) => handleInputChange(e)}
             required
           ></input>
           <input
             type="password"
+            id = "password"
             placeholder="Password"
             className="input"
-            onChange={(e) => handlePasswordInput(e)}
+            onChange={(e) => handleInputChange(e)}
             required
           ></input>
           <button
