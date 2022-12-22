@@ -6,7 +6,9 @@ export default function RecentTransactionsPage() {
   return (
     <>
       <HeaderLoggedIn />
-      <RecentTransactions className="recent-transactions-component" />
+      <div className="recent-transactions-container">
+        <RecentTransactions/>
+      </div>
       <Footer />
     </>
   );

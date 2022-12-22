@@ -6,16 +6,24 @@
 .dashboard-welcome{
     color: white;
     background-color: black;
-    width: max-content;
-    padding: 50px 50px 50px 50px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    padding: 0px 50px;
     border-radius: 20px;
 }
 
 .dashboard-welcome>p, .dashboard-welcome>h1{
-    padding: 10px 30px 10px 30px;
+    padding: 10px 30px;
     background-color: var(--card-highlight-bg);
     position: relative;
     border-radius: 15px;
+}
+
+.dashboard-welcome>p {
+    margin-top: 0px;
 }
 
 
@@ -23,7 +31,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: auto;
     position: absolute;
+    margin-top: 2%;
     top: 50%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
@@ -51,8 +61,9 @@
     height: 36px;
 }
 
-.recent-and-add-transactions{
+.recent-and-addd-transactions {
     display: flex;
     flex-direction: row;
-    width: 100vw;
+    align-items: center;
+    width: auto;
 }

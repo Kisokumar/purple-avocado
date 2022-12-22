@@ -2,10 +2,12 @@ export default function HeaderLoggedIn() {
   return (
     <header>
       <nav className="nav-bar">
-        <div className="title-box">
-          <img alt="Logo" src="/logo.png" className="logo" />
-          <p>Purple Avocado</p>
-        </div>
+      <a className="link" href="/">
+          <div className="title-box">
+            <img alt="Logo" src="/logo.png" className="logo" />
+            <p>Purple Avocado</p>
+          </div>
+        </a>
         <ul className="nav-items">
           <li>
             <a

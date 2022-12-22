@@ -112,7 +112,7 @@ function Dashboard() {
           {/* <SavingsBreakdown /> */}
         </div>
 
-        <section classname="recent-and-add-transactions">
+        <section className="recent-and-addd-transactions">
         <div className="add-transaction">
           <h1>Add Transaction</h1>
           <div>
