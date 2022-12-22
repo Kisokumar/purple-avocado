@@ -24,15 +24,22 @@ function Register() {
   };
 
   const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    const signUpData = { name, email, password, confirmPassword}
-    fetch('', {
-      method: 'POST',
-      headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(signUpData)
-    })
-    navigate('/dashboard/lucy');
+
+    const userData = {
+      name: name,
+      email: email,
+      password: password,
+      passwordrpt: confirmPassword
+    }
+
+    axios.post(`https://...`, userData)
+      .then(
+        navigate(`/dashboard/:${name}`)
+      )
+    }
   };
 
   return (
@@ -83,6 +90,6 @@ function Register() {
       </form>
     </section>
   );
-}
+
 
 export default Register;
