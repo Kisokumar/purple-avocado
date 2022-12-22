@@ -1,5 +1,7 @@
 import { useState, setState} from "react";
 import {useNavigate} from 'react-router-dom'
+import axios from 'axios';
+
 
 function Register() {
   const [name, setName] = useState("");
@@ -40,7 +42,7 @@ function Register() {
         navigate(`/dashboard/:${name}`)
       )
     }
-  };
+
 
   return (
     <section className="register">
@@ -90,6 +92,6 @@ function Register() {
       </form>
     </section>
   );
-
+}
 
 export default Register;
