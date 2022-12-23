@@ -33,6 +33,7 @@
     transition: margin-top 0.3s ease;
 } */
 
+
 .income-calculator-field{
     width: 80%;
     padding: 7px;
@@ -40,7 +41,10 @@
     border-radius: 20px;
 }
 
+/* 
 
-.results{
+*.results{
     width: 60%;
 }
+
+*/
