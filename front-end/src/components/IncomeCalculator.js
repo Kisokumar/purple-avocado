@@ -93,7 +93,7 @@ function IncomeCalculator() {
           </div>
 
           <section className="income-calculator">
-          <div className="add-transaction">
+          <div>
             <h1>Let's calculate your income!</h1>
             <div>
             <form
