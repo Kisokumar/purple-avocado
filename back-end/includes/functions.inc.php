@@ -35,7 +35,7 @@ function emailExists($conn, $email){
     $statement = mysqli_stmt_init($conn);
     //check data isnt going to inject:
     if(!mysqli_stmt_prepare($statement, $sql)){
-        header("location: ../signup.php?error=stmtfailed");
+        header("location: ../front-end/src/SignUpPage.js?error=stmtfailed");
     exit();
     }
     //prepare the input from the user:
@@ -58,25 +58,25 @@ function createUser($conn, $name, $email, $password){
     $sql = "INSERT INTO users (name, email, password) VALUES (?,?,?);"; //prepare statement
     $statement = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($statement, $sql)){ //if the sql statement is not prepared correctly
-        header("location: ../signup.php?error=signupfailed");
+        header("location: ../front-end/src/pages/SignUpPage.js?error=signupfailed");
         exit();
     }
     //hash the password for security
     $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
 
     //now we know the data is ok, we'll prepare the input from the user:
-    mysqli_stmt_bind_param($statement, "sss", $username, $email, $hashedPwd); // "ssss" means 3 strings
+    mysqli_stmt_bind_param($statement, "sss", $name, $email, $hashedPwd); // "sss" means 3 strings
 
     $resultData = mysqli_stmt_get_result($statement);
     mysqli_stmt_execute($statement);
     mysqli_stmt_close($statement);
-    header("location: ../signup.php?error=none");
+    header("location: ../front-end/src/DashboardPage.js");
     exit();
 }
 
-function emptyInputLogin($username, $password){
+function emptyInputLogin($email, $password){
     $result;
-    if(empty($password) || empty($username)){
+    if(empty($password) || empty($email)){
         $result = true;
     }else{
         $result = false;
@@ -84,26 +84,26 @@ function emptyInputLogin($username, $password){
     return $result;
 }
 
-function loginUser($conn, $username, $password){
-    $uIDExists = uIDExists($conn, $username, $username);
+function loginUser($conn, $email, $password){
+    $emailExists = emailExists($conn, $email);
 
-    if($uIDExists == false){
-        header("location: ../login.php?error=wronglogin");
+    if($emailExists == false){
+        header("location: ../front-end/src/LogInPage.js?error=wronglogin");
         exit();
     }
 
-    $pwdHashed = $uIDExists["pwd"];
+    $pwdHashed = $emailExists["password"];
     $checkPwd = password_verify($password, $pwdHashed);
 
     if($checkPwd == false){
-        header("location: ../login.php?error=wrongpassword");
+        header("location: ../front-end/src/LogInPage.js?error=wrongpassword");
         exit();
     }
     else if($checkPwd == true){
         session_start();
-        $_SESSION["usersId"]=$uIDExists["usersId"];
-        $_SESSION["username"]=$uIDExists["username"];
-        header("location: ../index.php");
+        $_SESSION["email"]=$emailExists["email"];
+        $_SESSION["username"]=$emailExists["username"];
+        header("location: ../front-end/src/DashboardPage.js");
         exit();
 
     }
