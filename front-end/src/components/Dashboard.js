@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import RecentTransactions from "./RecentTransactions";
 import { useState } from "react";
-import axios from 'axios';
+import axios from "axios";
 
 // This would be received from the backend once completed
 
@@ -86,20 +86,21 @@ function Dashboard() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const transactionData = { transactionType, amount, date}
-    console.log(transactionData)
-    axios.post('http://...', userData)
-    .then(response => {
-      // handle the response here
-    })
-    .catch(error => {
-      // handle the error here
-    })
+    const transactionData = { transactionType, amount, date };
+    console.log(transactionData);
+    axios
+      .post("http://...", userData)
+      .then((response) => {
+        // handle the response here
+      })
+      .catch((error) => {
+        // handle the error here
+      });
   };
 
   var curr = new Date();
   curr.setDate(curr.getDate());
-  var todaysDate = curr.toISOString().substring(0,10);
+  var todaysDate = curr.toISOString().substring(0, 10);
 
   return (
     <>
@@ -114,11 +115,10 @@ function Dashboard() {
           {/* <SavingsBreakdown /> */}
         </div>
 
-        <section className="recent-and-addd-transactions">
         <div className="add-transaction">
           <h1>Add Transaction</h1>
           <div>
-          <form
+            <form
               onSubmit={handleSubmit}
               id="transaction-form"
               className="addtransaction"
@@ -130,7 +130,9 @@ function Dashboard() {
                 required
                 // defaultValue={"Choose Transaction"} //
               >
-                <option value="" disabled selected>Category</option>
+                <option value="" disabled selected>
+                  Category
+                </option>
                 <option value="shopping">Shopping</option>
                 <option value="eating out">Eating Out</option>
                 <option value="entertainment">Entertainment</option>
@@ -148,15 +150,14 @@ function Dashboard() {
                 required
               ></input>
 
-
               <input
-              onChange={(e) => setDate(e.target.value)}
-              type="date"
-              id="transaction"
-              name="transaction"
-              className="input dark"
-              defaultValue={todaysDate}
-              required
+                onChange={(e) => setDate(e.target.value)}
+                type="date"
+                id="transaction"
+                name="transaction"
+                className="input dark"
+                defaultValue={todaysDate}
+                required
               ></input>
               <button className="submit darkbutton" type="submit">
                 Submit
@@ -165,7 +166,6 @@ function Dashboard() {
           </div>
         </div>
         <RecentTransactions data={mockData.recentTransactions} />
-        </section>
       </div>
     </>
   );

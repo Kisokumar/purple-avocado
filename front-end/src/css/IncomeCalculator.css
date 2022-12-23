@@ -4,6 +4,7 @@
     color: white;
     border-radius: 30px;
     padding:20px 20px 20px 20px;
+    background-color: black;
     max-width: 50vw;
     align-items: center;
     margin: 0;
@@ -33,6 +34,18 @@
     transition: margin-top 0.3s ease;
 } */
 
+.income-input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+}
+
+.income-input select, button{
+    width: 365px;
+    height: 33px;
+}
+
 
 .income-calculator-field{
     width: 80%;
@@ -41,10 +54,9 @@
     border-radius: 20px;
 }
 
-/* 
 
-*.results{
+.results{
     width: 60%;
+    text-align: center;
+    padding: 40px 0px 20px 0px;
 }
-
-*/

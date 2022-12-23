@@ -8,6 +8,7 @@
     background-color: black;
     height: 200px;
     display: flex;
+    width: 1010px;
     flex-direction: column;
     justify-content: space-evenly;
     box-sizing: border-box;
@@ -26,19 +27,29 @@
     margin-top: 0px;
 }
 
-
-.dashboard-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: auto;
+.dashboard-container {
     position: absolute;
     margin-top: 2%;
     top: 50%;
-    left: 50%;
+    left: 55%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-}
+    height:600px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 20px;
+    /* gap: 20px 0px 20px 20px; */
+    grid-template-areas:
+      "dashboard-welcome dashboard-welcome dashboard-welcome"
+      "add-transaction recent-transactions-component recent-transactions-component"
+      ". . .";
+  }
+  .dashboard-welcome { grid-area: dashboard-welcome; }
+  .add-transaction { grid-area: add-transaction; }
+  .recent-transactions-component { grid-area: recent-transactions-component; }
+
 
 .add-transaction{
     display: flex;
@@ -48,8 +59,8 @@
     width: max-content;
     padding: 10px 40px 30px 40px;
     border-radius: 20px;
-    margin:20px;
-    height: inherit;
+    /* height: inherit;
+    /* gin: 20px 0px 0px 0px; */
 }
 
 .addtransaction{
@@ -61,9 +72,12 @@
     height: 36px;
 }
 
-.recent-and-addd-transactions {
+.recent-transactions-component{
+    margin-top: 15px;
+    width:700px;
+}
+
+/* .recent-and-addd-transactions {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    width: auto;
-}
+} */
