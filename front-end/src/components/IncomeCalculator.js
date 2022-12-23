@@ -36,29 +36,28 @@ function IncomeCalculator() {
     function calculate(wage, studentLoan, pension){
       let totalPay = 0;
 
+      let pa = 12570
+      let br = (50270 - 12571)*0.2
+      let hr = (150000-50271)*0.4
+
       pension = wage * (pension/100);
       //Deducting tax
       if(wage >= 150000){
-        totalPay += (wage-150000)*0.54
-        totalPay += (12570+410.59 + 2191 +3765.93 + 43598.17)
+        totalPay += (wage-150000)*0.55
+        totalPay += (pa + br + hr)
       }
-      else if(wage >= 43663){
-        totalPay += (wage-43663)*0.59
-        totalPay += (12570+410.59+2191+3765.93)
+      else if(wage >= 50271){
+        totalPay += (wage-50271)*0.6
+        totalPay += (pa+br)
       }
-      else if(wage >= 25689){
-        totalPay += (wage-25689)*0.79
-        totalPay += (12570+410.59+2191)
+      else if(wage >= 12571){
+        totalPay += (wage-12571)*0.8
+        totalPay += (pa)
       }
-      else if(wage >= 14733){
-        totalPay += (wage-14733)*0.80
+      else{
         totalPay += (12570+ 410.59)
       }
-      else if(wage >= 12570){
-        totalPay += (wage-12570)*0.81
-        totalPay += 12570
-      }
-      else {totalPay = wage}
+
       // //deducting NI
       if(wage >= 50284){
         totalPay -= (wage-50284)*0.0325
