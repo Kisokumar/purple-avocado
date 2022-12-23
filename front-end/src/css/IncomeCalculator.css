@@ -1,7 +1,6 @@
 .income-calculator{
     display: flex;
     flex-direction: column;
-    background-color: black;
     color: white;
     border-radius: 30px;
     padding:20px 20px 20px 20px;
@@ -34,12 +33,13 @@
     transition: margin-top 0.3s ease;
 } */
 
-.field{
+.income-calculator-field{
     width: 80%;
     padding: 7px;
     margin: 10px;
     border-radius: 20px;
 }
+
 
 .results{
     width: 60%;
