@@ -1,12 +1,13 @@
 import HeaderLoggedIn from "../components/HeaderLoggedIn";
 import Footer from "../components/Footer";
-import Dashboard from "../components/Dashboard";
+import IncomeCalculator from "../components/IncomeCalculator";
 
-export default function DashboardPage() {
+export default function LoginPage() {
+
   return (
     <>
       <HeaderLoggedIn />
-      <Dashboard />
+      <IncomeCalculator />
       <Footer />
     </>
   );

@@ -1,12 +1,12 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import BalanceHistory from "../components/BalanceHistory";
+import IncomeResults from "../components/IncomeResults";
 
-export default function BalanceHistoryPage() {
+export default function LoginPage() {
   return (
     <>
       <Header />
-      <BalanceHistory/>
+      <IncomeResults />
       <Footer />
     </>
   );

@@ -4,6 +4,13 @@
 @import url("./css/Header.css");
 @import url("./css/AboutPage.css");
 @import url("./css/Dashboard.css");
+@import url("./css/SavingsBreakdown.css");
+@import url("./css/RecentTransactions.css");
+@import url("./css/RecentTransactionsPage.css");
+@import url("./css/IncomeCalculator.css");
+@import url("./css/IncomeResults.css");
+
+
 
 :root {
   --card-highlight-bg: rgb(41, 41, 41);

@@ -57,47 +57,47 @@ const data = [
 
 export default function SavingsBreakdown() {
   return (
-    <div classname='centre'>
+    <div className='savings-container'>
       <h1 style={{color: "white"}}>Savings Breakdown</h1>
-    <AreaChart
-    className="dashboard"
-      width={500}
-      height={400}
-      data={data}
-      margin={{
-        top: 10,
-        right: 30,
-        left: 0,
-        bottom: 0
-      }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="month" />
-      <YAxis />
-      <Tooltip />
-      <Area
-        type="monotone"
-        dataKey="Shares"
-        stackId="1"
-        stroke="#8884d8"
-        fill="#8884d8"
-      />
-      <Area
-        type="monotone"
-        dataKey="Cash"
-        stackId="1"
-        stroke="#82ca9d"
-        fill="#82ca9d"
-      />
-      <Area
-        type="monotone"
-        dataKey="Bitcoin"
-        stackId="1"
-        stroke="#ffc658"
-        fill="#ffc658"
-      />
-      <Legend />
-    </AreaChart>
+      <AreaChart
+      className="dashboard"
+        width={500}
+        height={400}
+        data={data}
+        margin={{
+          top: 10,
+          right: 30,
+          left: 0,
+          bottom: 0
+        }}
+      >
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="month" />
+        <YAxis />
+        <Tooltip />
+        <Area
+          type="monotone"
+          dataKey="Shares"
+          stackId="1"
+          stroke="#8884d8"
+          fill="#8884d8"
+        />
+        <Area
+          type="monotone"
+          dataKey="Cash"
+          stackId="1"
+          stroke="#82ca9d"
+          fill="#82ca9d"
+        />
+        <Area
+          type="monotone"
+          dataKey="Bitcoin"
+          stackId="1"
+          stroke="#ffc658"
+          fill="#ffc658"
+        />
+        <Legend />
+      </AreaChart>
     </div>
   );
 }

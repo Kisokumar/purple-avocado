@@ -13,9 +13,10 @@
   text-decoration: none;
   }
 
+
 .title-box{
     display: flex;
-  color: white;
+    color: white;
     align-items: center;
     border-radius: 30px;
     padding-right:20px;
@@ -24,13 +25,13 @@
   }
 
 .title-box:hover{
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   transition-duration: 0.1s;
 }
 
   .logo{
-    height:33px;
+    height:60px;
     padding: 0px 20px 0px 10px;
   }
 

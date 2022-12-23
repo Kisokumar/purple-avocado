@@ -1,0 +1,46 @@
+.income-calculator{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    padding:20px 20px 20px 20px;
+    max-width: 50vw;
+    align-items: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -47%);
+    transform: translate(-50%, -47%);
+    /* transition: height 0.3s ease; */
+}
+
+.submitButtonTransition {
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+#income-form{
+    display: flex;
+    flex-direction: column;
+    max-width: 80vw;
+
+}
+
+/* .resultContent {
+    max-height: 300px;
+    overflow: hidden;
+    transition: margin-top 0.3s ease;
+} */
+
+.field{
+    width: 80%;
+    padding: 7px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.results{
+    width: 60%;
+}

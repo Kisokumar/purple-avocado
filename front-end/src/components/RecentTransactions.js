@@ -59,14 +59,14 @@ const data = [
   },
 ];
 
-export default function BalanceHistory(props) {
+export default function RecentTransactions(props) {
   return (
-    <div className="balance-component">
-      <h3>Account Balance</h3>
+    <div className="recent-transactions-component">
+      <h3>Recent Transactions</h3>
       <AreaChart
         width={500}
         height={200}
-        data={props.data}
+        data={data}
         syncId="anyId"
         margin={{
           top: 10,

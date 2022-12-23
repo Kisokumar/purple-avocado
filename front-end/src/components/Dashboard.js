@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
-// import SavingsBreakdown from "./SavingsBreakdown";
-import BalanceHistory from "./BalanceHistory";
+import RecentTransactions from "./RecentTransactions";
 import { useState } from "react";
+import axios from 'axios';
 
 // This would be received from the backend once completed
 
@@ -11,9 +11,9 @@ const mockData = {
   balance: "$5500",
   recentTransactions: {
     Groceries: -139,
-    "Investing/Saving": -1200,
-    Income: 30000,
-    Bills: -200,
+    Shopping: -1200,
+    Entertainment: 30000,
+    Travel: -200,
   },
   // balanceHistory: [
   //   ["1/12/2022", "$315,360,102,090,135,047"],
@@ -82,21 +82,31 @@ function Dashboard() {
 
   const [transactionType, setTransactionType] = useState("");
   const [amount, setAmount] = useState("");
+  const [date, setDate] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const transaction = { transactionType, amount };
-    // console.log(transaction);
-    // use this function to send 'transaction' object to backend
+    const transactionData = { transactionType, amount, date}
+    console.log(transactionData)
+    axios.post('http://...', userData)
+    .then(response => {
+      // handle the response here
+    })
+    .catch(error => {
+      // handle the error here
+    })
   };
+
+  var curr = new Date();
+  curr.setDate(curr.getDate());
+  var todaysDate = curr.toISOString().substring(0,10);
 
   return (
     <>
       <div className="dashboard-container">
-        <div className="dashboard">
-          <h1>Welcome back {userData(username).name}!</h1>
+        <div className="dashboard-welcome">
+          <h1>Welcome back, {userData(username).name}!</h1>
           <p>Balance: {userData(username).balance}</p>
-          <BalanceHistory data={mockData.balanceHistory} />
           {/* fix code below by looping over recentTransactions and returning each one in a p tag */}
           {/* <p>
             Recent Transactions: {userData(username).recentTransactions.Bills}
@@ -104,35 +114,49 @@ function Dashboard() {
           {/* <SavingsBreakdown /> */}
         </div>
 
-        <div className="transaction">
+        <section className="recent-and-addd-transactions">
+        <div className="add-transaction">
           <h1>Add Transaction</h1>
           <div>
-            <form
+          <form
               onSubmit={handleSubmit}
               id="transaction-form"
               className="addtransaction"
+              // action="/dashboard"
             >
               <select
                 className="input dark dropdown"
                 onChange={(e) => setTransactionType(e.target.value)}
+                required
                 // defaultValue={"Choose Transaction"} //
               >
-                <option value="" disabled selected>
-                  Choose Transaction
-                </option>
-                <option value="income">Income</option>
-                <option value="savings">Savings</option>
-                <option value="bills">Bills</option>
-                <option value="utilities">Utilities</option>
+                <option value="" disabled selected>Category</option>
+                <option value="shopping">Shopping</option>
+                <option value="eating out">Eating Out</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="transport">Transport</option>
                 <option value="rent">Rent</option>
                 <option value="groceries">Groceries</option>
+                <option value="other">Other</option>
               </select>
+
               <input
                 className="input dark"
-                placeholder="Amount (example: 23.49)"
+                placeholder="£..."
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
                 required
+              ></input>
+
+
+              <input
+              onChange={(e) => setDate(e.target.value)}
+              type="date"
+              id="transaction"
+              name="transaction"
+              className="input dark"
+              defaultValue={todaysDate}
+              required
               ></input>
               <button className="submit darkbutton" type="submit">
                 Submit
@@ -140,6 +164,8 @@ function Dashboard() {
             </form>
           </div>
         </div>
+        <RecentTransactions data={mockData.recentTransactions} />
+        </section>
       </div>
     </>
   );

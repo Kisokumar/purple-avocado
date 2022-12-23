@@ -3,43 +3,44 @@
     color: white;
 }
 
-.dashboard{
-    display: flex;
-    flex-direction: column;
+.dashboard-welcome{
     color: white;
     background-color: black;
-    width: max-content;
-    padding: 50px 50px 50px 50px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    padding: 0px 50px;
     border-radius: 20px;
 }
 
-.dashboard > p, .dashboard>h1{
-    /* border-color: white; */
-    /* border: solid; */
-    border-radius:20px;
-    padding: 10px 30px 10px 30px;
+.dashboard-welcome>p, .dashboard-welcome>h1{
+    padding: 10px 30px;
     background-color: var(--card-highlight-bg);
+    position: relative;
+    border-radius: 15px;
 }
 
-.balance-component{
-    border-radius:20px;
-    padding: 10px 30px 10px 30px;
-    background-color: var(--card-highlight-bg)
+.dashboard-welcome>p {
+    margin-top: 0px;
 }
+
 
 .dashboard-container{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    margin: 0;
+    height: auto;
     position: absolute;
+    margin-top: 2%;
     top: 50%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 
-.transaction{
+.add-transaction{
     display: flex;
     flex-direction: column;
     color: white;
@@ -48,7 +49,7 @@
     padding: 10px 40px 30px 40px;
     border-radius: 20px;
     margin:20px;
-    /* height: 80px; */
+    height: inherit;
 }
 
 .addtransaction{
@@ -58,4 +59,11 @@
 
 .dropdown{
     height: 36px;
+}
+
+.recent-and-addd-transactions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
 }

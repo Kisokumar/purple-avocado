@@ -1,4 +1,7 @@
-import { useState, setState } from "react";
+import { useState, setState} from "react";
+import {useNavigate} from 'react-router-dom'
+import axios from 'axios';
+
 
 function Register() {
   const [name, setName] = useState("");
@@ -21,10 +24,28 @@ function Register() {
       setConfirmPassword(value);
     }
   };
+
+  const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(name, email, password, confirmPassword);
-  };
+
+    const userData = {
+      name: name,
+      email: email,
+      password: password,
+      passwordrpt: confirmPassword
+    }
+
+    axios.post(`https://...`, userData)
+      .then(
+        navigate(`/dashboard/:${name}`)
+      )
+
+    console.log(userData)
+
+  }
+
 
   return (
     <section className="register">

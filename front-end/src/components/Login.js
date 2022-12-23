@@ -1,29 +1,48 @@
 import { useState, setState } from "react";
+import {useNavigate} from 'react-router-dom'
+import axios from 'axios';
+
 
 function Login() {
-  const [username, setUsername] = useState(null);
-  const [password, setPassword] = useState(null);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
 
   const handleInputChange = (e) => {
-    const { id, value } = e.target;
-    if (id === "username") {
+    const {id , value} = e.target;
+    if(id === "username"){
       setUsername(value);
-    }
-    if (id === "password") {
-      setPassword(value);
-    }
-  };
+  }
+    if(id === "password"){
+        setPassword(value);
+    }}
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(username, password);
-  };
+  const navigate = useNavigate(); //allows a React component to programmatically navigate to a new location
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const userData = {
+      username: username,
+      password: password
+    }
+
+      axios.post('http://...', userData)
+    .then(response => {
+      // handle the response here
+    })
+    .catch(error => {
+      // handle the error here
+    })
+
+    console.log(userData)
+  }
+
 
   return (
     <section className="register">
-      <form className="signupform">
-        <h1 className="signup">Log In</h1>
-        <div className="signup-container">
+      <h1 className="signup">Log In</h1>
+      <form className="signupform signup-container">
           <input
             type="text"
             id="username"
@@ -31,12 +50,15 @@ function Login() {
             value={username}
             className="field username input"
             onChange={(e) => handleInputChange(e)}
+            required
           ></input>
           <input
             type="password"
+            id = "password"
             placeholder="Password"
             className="input"
             onChange={(e) => handleInputChange(e)}
+            required
           ></input>
           <button
             type="submit"
@@ -44,10 +66,10 @@ function Login() {
             value={password}
             onClick={handleSubmit}
             className="submit darkbutton"
+            action="/dashboard"
           >
             Submit
           </button>
-        </div>
       </form>
     </section>
   );

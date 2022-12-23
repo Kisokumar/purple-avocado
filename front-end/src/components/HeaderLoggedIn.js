@@ -1,38 +1,42 @@
-export default function Header() {
+export default function HeaderLoggedIn() {
   return (
     <header>
       <nav className="nav-bar">
-        <div className="title-box">
-          <img alt="money bag logo" src="./money-bag.png" className="logo" />
-          <p>Purple Avocado</p>
-        </div>
+      <a className="link" href="/">
+          <div className="title-box">
+            <img alt="Logo" src="/logo.png" className="logo" />
+            <p>Purple Avocado</p>
+          </div>
+        </a>
         <ul className="nav-items">
           <li>
-            {/* Need to change link */}
             <a
-              href="https://www.google.com/"
-              target="_blank"
-              rel="noopener noreferrer"
+            className = "button"
+              href="/dashboard/:username"
+            >
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a
+              className = "button"
+              href="/recenttransactions"
             >
               Recent Transactions
             </a>
           </li>
           <li>
-            {/* Need to change link */}
             <a
-              href="https://www.google.com/"
-              target="_blank"
-              rel="noopener noreferrer"
+              className = "button"
+              href="/incomecalculator"
             >
-              Overview
+              Income Calculator
             </a>
           </li>
           <li>
-            {/* Need to change link */}
             <a
-              href="https://www.google.com/"
-              target="_blank"
-              rel="noopener noreferrer"
+              className = "button"
+              href="/login"
             >
               Logout
             </a>
