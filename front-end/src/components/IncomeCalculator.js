@@ -48,14 +48,14 @@ function IncomeCalculator() {
       }
       else if(wage >= 50271){
         totalPay += (wage-50271)*0.6
-        totalPay += (pa+br)
+        totalPay += (pa + br)
       }
       else if(wage >= 12571){
-        totalPay += (wage-12571)*0.8
+        totalPay += (wage - 12571)*0.8
         totalPay += (pa)
       }
       else{
-        totalPay += (12570+ 410.59)
+        totalPay += wage
       }
 
       // //deducting NI
